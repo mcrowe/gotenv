@@ -9,13 +9,13 @@ Gotenv offers a clean, robust, and secure way to configure your node application
 - Configuration via environment variables is [one honking good idea](https://12factor.net/config)
 - Despite what the 12factor doctrine suggests, it is a good a idea to have separate configurations for dev/test environments in your code base
 - Required and optional environment variables for an application should be well documented in a conventional place.
-- The app should abort and tell you if required environment variables are missing, rather than breaking in unpredictable ways.
+- Your app should abort and report if required environment variables are missing, rather than breaking in unpredictable ways.
 - Parsing and validating format of environment variables is the app developer's job
 
 Gotenv:
 
 - Parses a `.env` file for enviroment variables if present
-- Parses a `.env.test` file instead if `NODE_ENV=test`
+- If `NODE_ENV=test` then it looks for a `.env.test` file instead and defaults to `.env` if missing
 - Validates required enviroment variables, documented in your `package.json` (see below)
 
 ## Why not "D"otenv

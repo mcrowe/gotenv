@@ -1,6 +1,6 @@
-function doSomething(a: number): number {
-  return a * 5
-}
+import Loader from './loader'
+import Validator from './validator'
 
 
-export default doSomething
+Loader.run()
+Validator.run()
