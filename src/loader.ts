@@ -19,6 +19,9 @@ function run() {
 }
 
 
+export default { run }
+
+
 function getFilePath(): string | undefined {
   if (isTestEnvironment() && fs.existsSync(ENV_TEST_PATH)) {
     return ENV_TEST_PATH
@@ -48,6 +51,3 @@ function mergeEnvMap(map: IEnvMap) {
     process.env[key] = map[key] || process.env[key]
   }
 }
-
-
-export default { run, parseEnvMap }
